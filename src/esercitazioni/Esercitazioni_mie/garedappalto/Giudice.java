@@ -3,12 +3,14 @@ package Esercitazioni_mie.garedappalto;
 import java.io.*;
 import java.net.*;
 
+@SuppressWarnings("all")
 public class Giudice {
     private static final int rPort = 2000;
     private final static String gAddress = "230.0.0.1";
     private final static int gPort = 3000;
     private final static int oPort = 4000;
     private final static int n = 10;
+    
     public static void main(String[] args) {
         try {
             InetAddress group = InetAddress.getByName(gAddress);
@@ -27,7 +29,9 @@ public class Giudice {
             ObjectOutputStream oos = new ObjectOutputStream(accettaRichiesta.getOutputStream());
             oos.writeObject(oVincente);
             inviaEsitoGara(oVincente, group);
-        } catch (IOException e) { e.printStackTrace(); }
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     private static void inviaRichiestaAiPartecipanti (Richiesta richiesta, InetAddress group) {
