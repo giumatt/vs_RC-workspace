@@ -1,0 +1,133 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ClientTest<vs_RC-workspace_4728edbf>",
+            "request": "launch",
+            "mainClass": "Esercitazione1.ClientTest",
+            "projectName": "vs_RC-workspace_4728edbf"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DownloadHTML<vs_RC-workspace_4728edbf>",
+            "request": "launch",
+            "mainClass": "Esercitazione1.DownloadHTML",
+            "projectName": "vs_RC-workspace_4728edbf"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-EchoServer<vs_RC-workspace_4728edbf>",
+            "request": "launch",
+            "mainClass": "Esercitazione1.EchoServer",
+            "projectName": "vs_RC-workspace_4728edbf"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SocketOpenerTest<vs_RC-workspace_4728edbf>",
+            "request": "launch",
+            "mainClass": "Esercitazione1.SocketOpenerTest",
+            "projectName": "vs_RC-workspace_4728edbf"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SocketTest<vs_RC-workspace_4728edbf>",
+            "request": "launch",
+            "mainClass": "Esercitazione1.SocketTest",
+            "projectName": "vs_RC-workspace_4728edbf"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ThreadedEchoServer<vs_RC-workspace_4728edbf>",
+            "request": "launch",
+            "mainClass": "Esercitazione1.ThreadedEchoServer",
+            "projectName": "vs_RC-workspace_4728edbf"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HttpServer<vs_RC-workspace_4728edbf>",
+            "request": "launch",
+            "mainClass": "Esercitazione2.HttpServer",
+            "projectName": "vs_RC-workspace_4728edbf"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HttpWelcome<vs_RC-workspace_4728edbf>",
+            "request": "launch",
+            "mainClass": "Esercitazione2.HttpWelcome",
+            "projectName": "vs_RC-workspace_4728edbf"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TimeClient<vs_RC-workspace_4728edbf>",
+            "request": "launch",
+            "mainClass": "Esercitazione2.Time.TimeClient",
+            "projectName": "vs_RC-workspace_4728edbf"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TimeServer<vs_RC-workspace_4728edbf>",
+            "request": "launch",
+            "mainClass": "Esercitazione2.Time.TimeServer",
+            "projectName": "vs_RC-workspace_4728edbf"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MulticastTimeClient<vs_RC-workspace_4728edbf>",
+            "request": "launch",
+            "mainClass": "Esercitazione3.MulticastTime.MulticastTimeClient",
+            "projectName": "vs_RC-workspace_4728edbf"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MulticastTimeServer<vs_RC-workspace_4728edbf>",
+            "request": "launch",
+            "mainClass": "Esercitazione3.MulticastTime.MulticastTimeServer",
+            "projectName": "vs_RC-workspace_4728edbf"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-URLConnectionTest<vs_RC-workspace_4728edbf>",
+            "request": "launch",
+            "mainClass": "Esercitazione3.URLConnectionTest",
+            "projectName": "vs_RC-workspace_4728edbf"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-URLTest<vs_RC-workspace_4728edbf>",
+            "request": "launch",
+            "mainClass": "Esercitazione3.URLTest",
+            "projectName": "vs_RC-workspace_4728edbf"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Communicator<vs_RC-workspace_4728edbf>",
+            "request": "launch",
+            "mainClass": "Esercitazione4.Communicator.Communicator",
+            "projectName": "vs_RC-workspace_4728edbf"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-BetClient<vs_RC-workspace_4728edbf>",
+            "request": "launch",
+            "mainClass": "Esercitazione4.Peaky_Blinders.BetClient",
+            "projectName": "vs_RC-workspace_4728edbf"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-BetServer<vs_RC-workspace_4728edbf>",
+            "request": "launch",
+            "mainClass": "Esercitazione4.Peaky_Blinders.BetServer",
+            "projectName": "vs_RC-workspace_4728edbf"
+        }
+    ]
+}
