@@ -1,14 +1,7 @@
 package Esercitazioni_mie.garedappalto;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.net.DatagramPacket;
-import java.net.InetAddress;
-import java.net.MulticastSocket;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.nio.channels.MulticastChannel;
+import java.io.*;
+import java.net.*;
 
 public class Giudice {
     private static final int rPort = 2000;
@@ -33,7 +26,7 @@ public class Giudice {
 
             ObjectOutputStream oos = new ObjectOutputStream(accettaRichiesta.getOutputStream());
             oos.writeObject(oVincente);
-            inviaEsitoGara(oVncente, group);
+            inviaEsitoGara(oVincente, group);
         } catch (IOException e) { e.printStackTrace(); }
     }
 

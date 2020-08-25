@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Giudice",
+            "request": "launch",
+            "mainClass": "Esercitazioni_mie.garedappalto.Giudice",
+            "projectName": "vs_RC-workspace_4728edbf"
+        },
+        {
+            "type": "java",
             "name": "Debug (Launch) - Current File",
             "request": "launch",
             "mainClass": "${file}"
