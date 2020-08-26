@@ -62,6 +62,26 @@ public class Giudice {
         return oVincente;
     }
 
+    private static Offerta riceviOffertaConTimer() {
+        Offerta oVincente = null;
+        try{
+            ServerSocket server = new ServerSocket(oPort);
+            server.setSoTimeout(60000);
+            while(true) {
+                Socket partecipante = server.accept();
+                ObjectInputStream ois = new ObjectInputStream(partecipante.getInputStream());
+                Offerta offerta = (Offerta) ois.readObject();
+                if (oVincente == null) oVincente = offerta;
+                else if (offerta.getImportoRichiesto() <= oVincente.getImportoRichiesto() || (offerta.getImportoRichiesto() == oVincente.getImportoRichiesto() && offerta.getId() < oVincente.getId()))
+                    oVincente = offerta;
+                partecipante.close();
+            }
+        } catch (SocketTimeoutException ste) {
+            System.out.println("Tempo offerte scaduto!");
+        } catch (IOException | ClassNotFoundException e) { e.printStackTrace(); }
+        return oVincente;
+    }
+
     private static void inviaEsitoGara(Offerta oVincente, InetAddress group) {
         try {
             MulticastSocket mSocket = new MulticastSocket(gPort);
