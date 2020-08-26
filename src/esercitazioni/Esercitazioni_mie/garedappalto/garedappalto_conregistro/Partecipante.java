@@ -20,8 +20,8 @@ public class Partecipante extends Thread {
         try {
             int idGara = Integer.parseInt(richiestaParts[1]);
             int importoMax = Integer.parseInt(richiestaParts[3].trim());
-            sleep(new Random().nextInt(60000));
-
+            sleep(new Random().nextInt(60000));     //risposta dopo tempo random
+            //risposta al giudice
             Socket socket = new Socket(GIUDICE_ADDRESS, 4000);
             ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
             Offerta2 offerta = new Offerta2(this.id, idGara, new Random().nextInt(importoMax));
@@ -36,6 +36,7 @@ public class Partecipante extends Thread {
         System.out.println("Avvio partecipante con ID: " + this.id);
         MulticastSocket mSocket = null;
         try {
+            //ricezione offerta
             mSocket = new MulticastSocket(3000);
             InetAddress group = InetAddress.getByName("230.0.0.1");
             mSocket.joinGroup(group);

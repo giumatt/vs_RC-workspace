@@ -23,10 +23,14 @@ public class ThreadTimeoutHandler extends Thread {
     @Override
     public void run() {
         try {
+            //invio la richiesta a tutti i partecipanti
             inviaRichiestaAiPartecipanti(registro.getRichiesta(idGara));
+            //attendo per un certo periodo l'arrivo delle offerte
             sleep(TIMEOUT);
+            //allo scadere del timeout chiudo la gara
             this.registro.chiudiGara(idGara);
             System.out.println("Gara " + idGara + " chiusa!");
+            //invio all'ente ed ai partecipanti l'esito della gara
             inviaEsitoGara();
         } catch (InterruptedException e) { e.printStackTrace(); }
     }
@@ -46,6 +50,7 @@ public class ThreadTimeoutHandler extends Thread {
 
     private void inviaEsitoGara() {
         try {
+            //invio notifica ai partecipanti
             System.out.println("Ricerco nel registro gara " + idGara);
             Offerta2 oVincente = this.registro.getOffertaVincente(idGara);
             if (oVincente == null) oVincente = new Offerta2(-1, idGara, -1);
@@ -58,6 +63,7 @@ public class ThreadTimeoutHandler extends Thread {
             DatagramPacket packet = new DatagramPacket(buf, buf.length, group, gPort);
             mSocket.send(packet);
 
+            //invio notifica all'ente
             ObjectOutputStream oos = new ObjectOutputStream(this.registro.getSocketEnte(idGara).getOutputStream());
             oos.writeObject(oVincente);
             System.out.println("Inviata offerta vincente all'ente");

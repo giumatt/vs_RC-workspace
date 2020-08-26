@@ -60,7 +60,7 @@ class RecordRegistro {
     public RecordRegistro(Socket enteSocket, Richiesta2 richiesta) {
         this.enteSocket = enteSocket;
         this.richiesta = richiesta;
-        this.status = true;
+        this.status = true;     //la gara è inizialmente aperta
     }
 
     public void setMiglioreOfferta(Offerta2 miglioreOfferta) {

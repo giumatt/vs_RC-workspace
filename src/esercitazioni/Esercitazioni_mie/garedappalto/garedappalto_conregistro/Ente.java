@@ -18,11 +18,14 @@ public class Ente extends Thread {
         try {
             sleep(new Random().nextInt(60000));
             @SuppressWarnings("all")
+            //invio richiesta
             Socket socket = new Socket(GIUDICE_ADDRESS, GIUDICE_PORT);
             ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
             Richiesta2 richiesta = new Richiesta2(idEnte, "Opera: " + (++countOpere), 100000);
             out.writeObject(richiesta);
             System.out.println("Inviata: " + richiesta);
+
+            //mi metto in attesa dell'offerta migliore
             ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
             Offerta2 offertaMigliore = (Offerta2) in.readObject();
             System.out.println("Ricevuta offerta migliore: " + offertaMigliore);

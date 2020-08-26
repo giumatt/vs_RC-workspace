@@ -7,7 +7,10 @@ public class GiudiceMultiGara {
 
     public void avvia() {
         try {
+            //fase 1-2: ricevi richiesta e invio offerta ai partecipanti
             new ThreadRichiesteHandler(registro).start();
+
+            //fase 3: ricevi offerte dai partecipanti
             new ThreadOfferteHandler(registro).start();
         } catch (IOException e) { e.printStackTrace(); }
     }

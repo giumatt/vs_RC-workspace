@@ -22,7 +22,11 @@ public class ThreadRichiesteHandler extends Thread {
                 ObjectInputStream ois = new ObjectInputStream(socketRichiesta.getInputStream());
                 Richiesta2 richiesta = (Richiesta2) ois.readObject();
                 System.out.println("Ricevuta nuova richiesta: " + richiesta);
+
+                //aggiungo richiesta di gara al registro
                 int idGara = registro.addGara(socketRichiesta, richiesta);
+                
+                //avvio thread per gestire il timer sulle offerte per questa gara
                 new ThreadTimeoutHandler(idGara, registro).start();
             } 
         } catch (IOException | ClassNotFoundException e) { e.printStackTrace(); }
