@@ -1,0 +1,44 @@
+<wsdl:definitions targetNamespace="http://www.examples.com/wsdl/AirportService">
+<wsdl:types>
+<schema targetNamespace="http://DefaultNamespace">
+<import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+    <complexType name="Data">
+    <sequence>
+        <element name="Giorno" type="xsd:int"/>
+        <element name="Mese" type="xsd:int"/>
+        <element name="Anno" type="xsd:int"/>
+    </sequence>
+    
+    <complexType>
+    <complexType name="Orario">
+    <sequence>
+        <element name="Ore" type="xsd:int"/>
+        <element name="Minuti" type="xsd:int"/>
+    </sequence>
+<complexType>
+<schema>
+<wsdl:types>
+    <wsdl:message name="PrimoVoloRequest">
+        <wsdl:part name="in0" type="xsd:string"/>
+        <wsdl:part name="in1" type="tns1:Data"/>
+    </message>
+    <wsdl:message name="PrimoVoloResponse">
+        <wsdl:part name="in0" type="xsd:string"/>
+    </message>
+    <wsdl:message name="OrarioVoloRequest">
+        <wsdl:part name="in0" type="xsd:string"/>
+        <wsdl:part name="in1" type="tns1:Data"/>
+    </message>
+    <wsdl:message name="OrarioVoloResponse">
+        <wsdl:part name="in0" type="tns1:Orario"/>
+    </message>
+    <wsdl:portType name="AirportService">
+        <wsdl:operation name="PrimoVolo" parameterOrder="in0 in1">
+            <wsdl:input message="impl:PrimoVoloRequest" name=PrimoVoloRequest/>
+            <wsdl:output message="impl:PrimoVoloResponse" name=PrimoVoloResponse/>
+        </operation>
+        <wsdl:operation name="OrarioVolo" parameterOrder="in0 in1">
+            <wsdl:input message="impl:OrarioVoloRequest" name=OrarioVoloRequest/>
+            <wsdl:output message="impl:OrarioVoloResponse" name=OrarioVoloResponse/>
+        </operation>
+    </wsdl:portType>
