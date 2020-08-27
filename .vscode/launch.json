@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Client",
+            "request": "launch",
+            "mainClass": "Esercitazioni_mie.IndexServer.Client",
+            "projectName": "vs_RC-workspace_4728edbf"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - StorageServer",
+            "request": "launch",
+            "mainClass": "Esercitazioni_mie.IndexServer.StorageServer",
+            "projectName": "vs_RC-workspace_4728edbf"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - IndexServer",
+            "request": "launch",
+            "mainClass": "Esercitazioni_mie.IndexServer.IndexServer",
+            "projectName": "vs_RC-workspace_4728edbf"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Giudice",
             "request": "launch",
             "mainClass": "Esercitazioni_mie.garedappalto.Giudice",
