@@ -2,11 +2,9 @@ package Esercitazioni_mie.IndexServer;
 
 import java.io.BufferedReader;
 import java.io.ObjectOutputStream;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.*;
-
-import jdk.internal.jline.internal.InputStreamReader;
-
 public class Client {
     public static void main(String[] args) {
         try {

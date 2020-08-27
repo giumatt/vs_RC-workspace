@@ -4,6 +4,10 @@ import java.io.*;
 import java.util.Arrays;
 
 public class File implements Serializable {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
     private String filename;
     private String[] keywords;
     private String contenuto;
