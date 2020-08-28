@@ -20,7 +20,7 @@ public class Volo {
 
     public Orario getOrario() { return orario; }
 
-    private String getVoloId() { return voloId; }
+    public String getVoloId() { return voloId; }
 
     @Override
     public boolean equals(Object obj) {

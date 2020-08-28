@@ -3,6 +3,10 @@ package Esercitazioni_mie.VoliAeroportoWSDL;
 import java.io.Serializable;
 
 public class Data implements Serializable {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
     private int giorno, mese, anno;
 
     public Data(int giorno, int mese, int anno) {
