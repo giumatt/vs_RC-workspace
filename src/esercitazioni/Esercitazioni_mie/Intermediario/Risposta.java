@@ -14,9 +14,17 @@ public class Risposta implements Serializable {
 
     public int getPrezzo() { return prezzo; }
 
-    public void setPrezzo(int quantita) { this.prezzo = prezzo; }
+    public void setPrezzo(int prezzo) { this.prezzo = prezzo; }
 
     public int getQuantita() { return quantita; }
 
-    public void setQuantita()  thie
+    public void setQuantita(int quantita) { this.quantita = quantita; }
+    
+    public int getIdVenditore() { return idVenditore; }
+
+    public void setIdVenditore (int idVenditore) { this.idVenditore =idVenditore; }
+
+    public int getIdProdotto() { return idProdotto; }
+
+    public void setIdProdotto(int idProdotto) { this.idProdotto = idProdotto; }
 }
