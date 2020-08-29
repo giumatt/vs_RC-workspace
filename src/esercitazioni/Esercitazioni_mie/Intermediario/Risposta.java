@@ -3,6 +3,10 @@ package Esercitazioni_mie.Intermediario;
 import java.io.Serializable;
 
 public class Risposta implements Serializable {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
     private int prezzo, quantita, idVenditore, idProdotto;
 
     public Risposta(int prezzo, int quantita, int idVenditore, int idProdotto) {
