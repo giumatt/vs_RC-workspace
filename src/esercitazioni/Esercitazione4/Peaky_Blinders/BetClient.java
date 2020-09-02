@@ -29,7 +29,7 @@ public class BetClient {
             out.println(bet);
             e = in.readLine();
         } catch (IOException ioe) { System.err.println(ioe); }
-        return e.equals("Scommessa accettata, figlio di puttana");
+        return e.equals("Scommessa accettata");
     }
 
     public void riceviElencoVincitori() {
@@ -41,7 +41,7 @@ public class BetClient {
             DatagramPacket packet = new DatagramPacket(buf, buf.length);
             socket.receive(packet);
             String elenco = new String(packet.getData());
-            System.out.print("Ecco i vincitori, stronzi!");
+            System.out.print("Ecco i vincitori: ");
             System.out.println(elenco);
         } catch (IOException e) { System.err.println(e); }
     }
