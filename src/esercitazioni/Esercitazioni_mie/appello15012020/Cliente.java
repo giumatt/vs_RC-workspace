@@ -9,7 +9,6 @@ public class Cliente {
     private static List<Offerta> offerte;
     public static void main(String[] args) {
         try {
-            offerte = new List<>();
             Socket socket = new Socket("gestore.dimes.unical.it", 1111);
             ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
             Richiesta richiesta = new Richiesta("12/05/2020", 5);
