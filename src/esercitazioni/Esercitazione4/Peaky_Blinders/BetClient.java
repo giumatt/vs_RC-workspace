@@ -20,10 +20,10 @@ public class BetClient {
         } catch (IOException e) { System.err.println(e); }
     }
 
-    public boolean placeBet (int nCavallo, long puntata) {
+    public boolean placeBet(int nCavallo, long puntata) {
         String e = "";
         try {
-            BufferedReader in = new BufferedReader(new InputStreamReader (s.getInputStream()));
+            BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream()));
             PrintWriter out = new PrintWriter(s.getOutputStream(), true);
             String bet = nCavallo + " " + puntata;
             out.println(bet);
