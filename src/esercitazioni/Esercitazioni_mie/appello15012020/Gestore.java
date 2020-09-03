@@ -7,6 +7,7 @@ import java.util.List;
 
 public class Gestore extends Thread {
     List<Offerta> offerte;
+
     @Override
     public void run() {
         try {
