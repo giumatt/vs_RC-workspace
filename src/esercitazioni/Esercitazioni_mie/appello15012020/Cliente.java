@@ -7,7 +7,6 @@ import java.net.*;
 import java.util.List;
 
 public class Cliente {
-    private static List<Offerta> offerte;
     public static void main(String[] args) {
         try {
             //invio richiesta 1
@@ -26,8 +25,7 @@ public class Cliente {
             Socket Osocket = server.accept();
             ObjectInputStream input = new ObjectInputStream(Osocket.getInputStream());
             Offerta offerta = (Offerta) input.readObject();
-            System.out.println("Offerte ricevute: " + offerte.toString());
-            offerte.add(offerta);
+            System.out.println("Offerte ricevute: " + offerta.toString());
         } catch (Exception e) { e.printStackTrace(); }
     }
 }

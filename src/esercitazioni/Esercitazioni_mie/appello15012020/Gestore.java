@@ -6,8 +6,7 @@ import java.net.*;
 import java.util.List;
 
 public class Gestore extends Thread {
-    List<Offerta> offerte;
-
+    
     @Override
     public void run() {
         try {
@@ -18,10 +17,10 @@ public class Gestore extends Thread {
                 ObjectInputStream input = new ObjectInputStream(socket.getInputStream());
                 Richiesta richiesta = (Richiesta) input.readObject();
                 System.out.println("Richiesta ricevuta: " + richiesta.toString());
+                server.close();
                 inviaRichiesta(richiesta);
                 Offerta offerta = riceviOfferte();
-                offerte.add(offerta);
-                inviaOfferte(offerte);
+                inviaOfferte(offerta);
             }
         } catch (Exception e) { e.printStackTrace(); }
     }
@@ -53,13 +52,11 @@ public class Gestore extends Thread {
         return null;
     }
 
-    private void inviaOfferte(List<Offerta> offerte) {
+    private void inviaOfferte(Offerta offerta) {
         try {
             Socket socket = new Socket("127.0.0.1", 1111);
             ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
-            for (Offerta o: offerte) {
-                oos.writeObject(o);
-            }
+            oos.writeObject(offerta);
             System.out.println("Offerte inviata al cliente");
         } catch (Exception e) { e.printStackTrace(); }
     }
