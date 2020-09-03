@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Cliente",
+            "request": "launch",
+            "mainClass": "Esercitazioni_mie.appello15012020.Cliente",
+            "projectName": "vs_RC-workspace_4728edbf"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CentroBenessere",
+            "request": "launch",
+            "mainClass": "Esercitazioni_mie.appello15012020.CentroBenessere",
+            "projectName": "vs_RC-workspace_4728edbf"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Gestore",
+            "request": "launch",
+            "mainClass": "Esercitazioni_mie.appello15012020.Gestore",
+            "projectName": "vs_RC-workspace_4728edbf"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Client",
             "request": "launch",
             "mainClass": "Esercitazioni_mie.IndexServer.Client",

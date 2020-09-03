@@ -7,19 +7,19 @@ import java.util.List;
 
 public class Gestore extends Thread {
     List<Offerta> offerte;
-    List<Richiesta> richieste;
-
     @Override
     public void run() {
         try {
             while (true) {
-                Socket socket = new Socket("localhost", 1111);
                 ServerSocket server = new ServerSocket(1111);
-                socket = server.accept();
+                System.out.println("In attesa di una richiesta...");
+                Socket socket = server.accept();
                 ObjectInputStream input = new ObjectInputStream(socket.getInputStream());
                 Richiesta richiesta = (Richiesta) input.readObject();
+                System.out.println("Richiesta ricevuta: " + richiesta.toString());
                 inviaRichiesta(richiesta);
-                offerte.add(riceviOfferte());
+                Offerta offerta = riceviOfferte();
+                offerte.add(offerta);
                 inviaOfferte(offerte);
             }
         } catch (Exception e) { e.printStackTrace(); }
@@ -28,20 +28,25 @@ public class Gestore extends Thread {
     private void inviaRichiesta(Richiesta richiesta) {
         try {
             @SuppressWarnings("all")
-            Socket socket = new Socket("224.3.2.1", 2222);
+            Socket socket = new Socket("127.0.0.1", 2222);
             ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
             oos.writeObject(richiesta);
+            System.out.println("Richiesta: " + richiesta.toString() + " inviata al Centro Benessere");
         } catch (Exception e) { e.printStackTrace(); }
     }
 
     private Offerta riceviOfferte() {
         try {
-            Socket socket = new Socket("224.3.2.1", 3333);
+            //Socket socket = new Socket("127.0.0.1", 3333);
             ServerSocket server = new ServerSocket(3333);
-            socket = server.accept();
+            Socket socket = server.accept();
+            System.out.println("In attesa di offerte");
             ObjectInputStream input = new ObjectInputStream(socket.getInputStream());
             Offerta offerta = (Offerta) input.readObject();
+            System.out.println("Offerta ricevuta dal CB: " + offerta.toString());
+            System.out.println("Attesa di un minuto...");
             socket.setSoTimeout(10000);
+            System.out.println("Attesa terminata");
             return offerta;
         } catch (Exception e) { e.printStackTrace(); }
         return null;
@@ -49,12 +54,12 @@ public class Gestore extends Thread {
 
     private void inviaOfferte(List<Offerta> offerte) {
         try {
-            Socket socket = new Socket("localhost", 1111);
-            ServerSocket server = new ServerSocket(1111);
+            Socket socket = new Socket("127.0.0.1", 1111);
             ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
             for (Offerta o: offerte) {
                 oos.writeObject(o);
             }
+            System.out.println("Offerte inviata al cliente");
         } catch (Exception e) { e.printStackTrace(); }
     }
     public static void main(String[] args) {

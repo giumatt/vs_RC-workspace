@@ -9,15 +9,20 @@ public class Cliente {
     private static List<Offerta> offerte;
     public static void main(String[] args) {
         try {
-            Socket socket = new Socket("gestore.dimes.unical.it", 1111);
+            //invio richiesta
+            Socket socket = new Socket("127.0.0.1", 1111);
             ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
             Richiesta richiesta = new Richiesta("12/05/2020", 5);
+            System.out.println("Invio richiesta: " + richiesta.toString());
             oos.writeObject(richiesta);
+            System.out.println("Richiesta inviata");
 
+            //ricezione offerta
             ServerSocket server = new ServerSocket(1111);
-            socket = server.accept();
-            ObjectInputStream input = new ObjectInputStream(socket.getInputStream());
+            Socket Osocket = server.accept();
+            ObjectInputStream input = new ObjectInputStream(Osocket.getInputStream());
             Offerta offerta = (Offerta) input.readObject();
+            System.out.println("Offerte ricevute: " + offerte.toString());
             offerte.add(offerta);
         } catch (Exception e) { e.printStackTrace(); }
     }

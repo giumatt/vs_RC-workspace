@@ -18,4 +18,9 @@ public class Richiesta implements Serializable {
     public String getData() { return data; }
 
     public int getNumPersone() { return numeroPersone; }
+
+    @Override
+    public String toString() {
+        return "Richiesta [data: " + data + ", persone: " + numeroPersone + "]";
+    }
 }

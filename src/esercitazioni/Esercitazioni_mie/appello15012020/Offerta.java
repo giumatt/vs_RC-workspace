@@ -18,4 +18,9 @@ public class Offerta implements Serializable {
     public String getHostnameCB() { return hostnameCentroBenessere; }
 
     public int getPrezzo() { return prezzo; }
+
+    @Override
+    public String toString() {
+        return "Offerta [hostname: " + hostnameCentroBenessere + ", prezzo: " + prezzo + "]";
+    }
 }
