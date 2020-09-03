@@ -16,6 +16,8 @@ public class Cliente {
             System.out.println("Invio richiesta: " + richiesta.toString());
             oos.writeObject(richiesta);
             System.out.println("Richiesta inviata");
+            
+            Thread.sleep(3000);
 
             //ricezione offerta
             ServerSocket server = new ServerSocket(1111);
